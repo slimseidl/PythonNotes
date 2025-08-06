@@ -1,0 +1,11 @@
+- List Functions
+    - len(list)
+    - list1 + list2 
+        - concat list 2 to end of list 1
+    - min(list)
+    - max(list)
+    - sum(list)
+    - list.index(val)
+        - finds the index of first matching value
+    - list.count(val)
+        - counts instances of a value in the list 
