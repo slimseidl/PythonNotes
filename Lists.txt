@@ -7,5 +7,13 @@
     - sum(list)
     - list.index(val)
         - finds the index of first matching value
+        - or returns val of index
     - list.count(val)
         - counts instances of a value in the list 
+    - list.pop()
+        - removes a list value, takes an index as an argument
+        - mylist.pop(0) removes first element
+    - list.remove()
+        - removes a mathcing value
+        - mylist.remove('apple')
+    -

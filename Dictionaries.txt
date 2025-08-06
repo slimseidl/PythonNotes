@@ -1,0 +1,12 @@
+Dictionaries
+- Accessed by using keys rather than indices
+- my_dcitionary['Messi']
+    - Returns a value associated with Messi
+- Adding new key value pairs
+    - dict[k] = 7
+- Can be modified in place
+    - students['John'] = 'A+'
+Deleting Values
+    - del dict[k]
+    - removes k 
+    
