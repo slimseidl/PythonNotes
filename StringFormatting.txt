@@ -1,0 +1,14 @@
+String Formatting
+Common Formatting presentation types
+- s = string 
+    - print(f'{name:s})
+- d = decimal for integers only
+    - print(f'{number:d})
+    - prints as decimal number
+- b = binary
+- x lower case
+- X upper case
+- e prints in exponent notation
+- f fixed point notation
+    print(f'{number:.2f})
+    two decimals
