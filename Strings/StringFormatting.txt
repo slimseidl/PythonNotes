@@ -48,3 +48,79 @@ Fill Characters
     yields ***5
 
 String Methods 
+    Replace(old, new)
+    repalce(old, new, count)
+
+    phrase = 'Someday I will have three goats, six horses, and nine llamas.'
+    phrase = phrase.replace('one', 'uno')
+
+
+    Find(x)
+        finds the first occurence of item x in a string or else returns -1 
+        can be a variable or string literal 
+
+        my_str = Hooray, you's a winna! 
+        my_str.find(!) returns index 21
+        my_Str.find(Hoo) returns 0 
+        my_str.find(oo) returns 1 (first index of first occurring match)
+    Find(x, start)
+        same but start = index to start at 
+    Find(x, start, end)
+
+    rfind(x)
+        searches stirng in reverse order 
+    count(x)
+        counts occurrences of string in string 
+
+True or False Returning 
+
+    my_string.isalnum()
+        true if all upper or all lower or all nums are 0-9 
+    string.isdigit()
+        0-9
+    string.islower
+    string.isupper()
+    string.isspace()
+        true if all whitespace
+    string.startswith(x)
+    string.endswith(x)
+
+
+Creating new strings from a string 
+
+.capitalize()
+newstr = string.capitalize()
+    cap on first letter
+
+.lower()
+.upper()
+.strip() 
+    removes leading and trailing whitespace 
+.title()
+
+
+Splitting and Joining Strings 
+
+.split()
+    space is default separator 
+    can pass a separator such as a comma 
+    split breaks the string into a list 
+    my_str = "My name is slim shady" becomes [my, name, is, slim, shady] after using my_str = my_str.split()
+
+    string = a$B$c 
+    string.split('$') = [a,B,c]
+
+    If a string starts or end with the separator, then an empty string is created in the token list 
+
+.join()
+
+    inverse of split 
+    my_str = '@'.join([John,Seidl]) = John@Seidl 
+
+    separator can be anything
+
+a lot of times split and join are used together to replace a separator
+    title = 'Python-Lab-Warmup'
+    tokens = title.split('-')
+    title = ':'.join(tokens)
+    = Python:Lab:Warmup
