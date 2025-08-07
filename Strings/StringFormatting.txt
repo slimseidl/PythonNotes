@@ -12,3 +12,39 @@ Common Formatting presentation types
 - f fixed point notation
     print(f'{number:.2f})
     two decimals
+
+
+Advanced String Formatting 
+
+String Spacing / Field Widths
+    print(my_str:10)
+        gives the field 10 total spaces for alignment 
+    strings are left aligned, but numbers are right aligned
+
+    name = 'Joe'
+    matches = 20
+    points = 8
+    print(f'{name:6}{points:4}{matches:5}'
+
+    'Joe' has 3 characters, and the field width is 6, so 3 extra spaces are added after 'Joe'.
+    8 has 1 character, and the field width is 4, so 3 extra spaces are added before 8.
+    20 has 2 characters, and the field width is 5, so 3 extra spaces are added before 20.
+
+Text Alignment 
+    Alignment characters determine how a val should be aligned within its field width 
+    < = left 
+    > = right 
+    ^ = centered 
+    used before the field width 
+
+    print(f'{"Player Name":<16})
+    prints player name aligned to left 
+
+Fill Characters 
+    used to pad a replacement field when the string being inserted is samller than field width 
+    default is a space and not passed as a parameter 
+    score = 5
+    print(f'{score:*>4})
+    yields ***5
+
+String Methods 

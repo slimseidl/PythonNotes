@@ -1,0 +1,26 @@
+Strings are indexed 
+
+Slice notation 
+    my_str[start:end]
+    my_str = 'Mississippi'
+    my_str[3:8] = sissi
+    Can use negatives to specify values relative to the end of the string
+    my_str[7:-2] = ip 
+
+    my_str[8:]
+        Goes from position to end 
+    my_str[:23] 
+        goes from beginning to index 22 
+    my_str[:-1]
+        all but the last character 
+
+    my_str = 'http://reddit.com/r/python'
+    protocol = 'http://'
+    print(my_str[len(protocol):])
+
+    outputs reddit.com/r/python 
+
+Slice Stride 
+    determines the incrementation of slice notation 
+    my_str[:17:2]
+        increments by 2 every time starting with 0 index 
