@@ -70,3 +70,70 @@ Namespaces
         functions are global unless built in 
     locals()
         local variables
+
+Arbitrary function arguments 
+    if you dont know how many args or params will be passed to a function use *args 
+
+    example:
+        def print_sandwich(bread, meat, *args): 
+    print(f'{meat} on {bread}', end=' ') 
+    if len(args) > 0: 
+        print('with', end=' ') 
+    for extra in args: 
+        print(extra, end=' ') 
+    print('')
+
+    print_sandwich('sourdough', 'turkey', 'mayo')
+    print_sandwich('wheat', 'ham', 'mustard', 'tomato', 'lettuce')
+
+    returns 
+    turkey on sourdough with mayo
+    ham on wheat with mustard tomato lettuce
+
+    Can also use **kwargs to create a dcitionary containing extra arguments that aren't defined 
+        - short of keyword arguments 
+        - keys of the dictionary 
+
+        def print_sandwich(meat, bread, **kwargs):
+    print(f'{meat} on {bread}')
+    for category, extra in kwargs.items():
+        print(f'   {category}: {extra}')
+    print()
+
+    print_sandwich('turkey', 'sourdough', sauce='mayo')
+    print_sandwich('ham', 'wheat', sauce1='mustard', veggie1='tomato', veggie2='lettuce')
+
+Functions are limited to one return statement but can be packed into a tuple to return multiple values 
+    student_scores = [75, 84, 66, 99, 51, 65]
+
+def get_grade_stats(scores):
+    # Calculate the arithmetic mean
+    mean = sum(scores)/len(scores)
+    
+    # Calculate the standard deviation
+    tmp = 0
+    for score in scores:
+        tmp += (score - mean )**2
+    std_dev = (tmp/len(scores))**0.5
+
+    # Package and return average, standard deviation in a tuple
+    return mean, std_dev
+
+    # Unpack tuple
+    average, standard_deviation = get_grade_stats(student_scores)
+
+    print('Average score:', average)
+    print('Standard deviation:', standard_deviation)
+
+Document each function accordingly 
+    - high level overview 
+Docstrings 
+""" This is a docstring to describe a function and can span multiple lines """ 
+
+Help Function 
+help() 
+    provides documentation associated with an object 
+    help(my_function)
+        prints docstrings for programmer 
+
+    Works with most built in types as well such as str, range, max, list, int, dict etc.. 
