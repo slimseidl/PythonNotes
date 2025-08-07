@@ -1,0 +1,21 @@
+Loops
+- While 
+- For 
+    - for i in range(0,10)
+        - iterates from 0 to 9
+    - for i in range(0,10,2)
+        iterates from 0 to 9 going up by 2 
+Break and continue
+- Break breaks the loop and goes to the end 
+- Continue continues to the next loop iteration 
+    
+Enumerate
+- can help access a list index and value in one go
+    - list = [4,8,10]
+    - for index in range(len(list)):
+        value = list[index] 
+        print(f'Element {index}: {value})
+    OR 
+    - for (index, value) in enumerate(list):
+    print(index, value)
+    - iterates over list and gives index and associated value
