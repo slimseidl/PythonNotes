@@ -16,4 +16,77 @@
     - list.remove()
         - removes a mathcing value
         - mylist.remove('apple')
-    -
+
+A list is a container 
+
+Common list operations
+- my_list = [1,2,3]
+    - creates a list
+- Creating a list a second way 
+    -list(iter)
+    - my_list = list(123) = [1, 2, 3]
+Get an element from list 
+    - list[index]
+    - list[7]
+my_list[start:end]
+
+- Combining lists 
+    - mylist1 + mylist 2
+- Change value of list item
+    -mylist[1] = 'banana'
+    - changes 1 element to banana 
+- Delete an element 
+    - del mylist[1]
+
+
+List Methods 
+
+- list.append(value)
+    adds element to end of list 
+
+- list.extend([x])
+    adds all items in [x] to end of list 
+    - my_list.extend([4, 12]) adds 4 and 12 to list 
+
+- list.insert(i, x)
+    inserts x into lsit before position i 
+
+- list.remove(x)
+    removes first matching value x from list 
+
+- list.pop() 
+    removes and returns last element from list 
+
+- list.pop(i)
+    removes and returns item at position i from list 
+
+- list.sort()
+    sorts the list 
+
+- list.reverse()
+    reverses order of lsit 
+
+- list.index(x)
+    returns index of matching value x 
+
+- list.count(x)
+    coutns number of times x in lsit 
+
+- Enumerate 
+    iterates over a list and provides an iteration counter 
+    - returns variables 
+    - for pos, token in enumerate(tokens):
+
+Built in Functions 
+
+- all(list)
+    True if every element in list it True (does not = 0)
+
+- any(list)
+    True if any element in lsit is true (any vlaue != 0)
+
+- max(list)
+    get max element 
+- min(list) = get min 
+- sum(list)
+
