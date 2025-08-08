@@ -1,0 +1,11 @@
+Lists can contain other lists 
+
+my_list = [[5, 13], [50, 75, 100]]
+
+my_list[0][0] = 5
+my_list[1[0]] = 50
+my_list[0] = [5,13]
+
+Iterating thru a nested list requires use of a nested loop:
+    for i in my_list:
+        for vals in i:

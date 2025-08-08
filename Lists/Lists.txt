@@ -90,3 +90,60 @@ Built in Functions
 - min(list) = get min 
 - sum(list)
 
+List Slicing 
+
+    my_list[0:3] = accesses elements 0 thru 2 
+
+    Can also use a stride length to specify increments 
+    my_list[0:10:2] = accesses elements 0 thru 9 going up by 2's 
+
+    Common list slicing methods:
+
+        my_list[start:end]
+
+        my_list[start:end:stride]
+
+        my_list[start:]
+
+        my_list[:end]
+
+        my_list[:]
+            - gets a copy of the list 
+
+Loops to modify lists 
+
+    my_list = [3.2, 5.0, 16.5, 12.25]
+
+    for i in range(len(my_list)):
+        my_list[ i ] += 5
+
+List comprehension
+
+    iterates over a list, modifies each element, and returns a new list consisting of modified elements 
+
+    A list comprehension has three components:
+
+        An expression component to evaluate for each element in the iterable object.
+        A loop variable component to bind to the current iteration element.
+        An iterable object component to iterate over (list, string, tuple, enumerate, etc).
+
+    Add 5 to every element:
+    my_list = [10, 20, 30]
+    list_plus_5 = [(i + 5) for i in my_list]
+
+    Covert to a string: 
+    my_list = [5, 20, 50]
+    my_list = [str(i) for i in my_list]
+
+    Covert to integers:
+    my_list = [int(i) for i in inp.split()]
+
+    Find sum of each row in two dimensional list:
+    sum_list = [sum(row) for row in my_list]
+
+
+Sorting Lists 
+
+    my_list.sort()
+
+    sorted_numbers = sorted(numbers)
