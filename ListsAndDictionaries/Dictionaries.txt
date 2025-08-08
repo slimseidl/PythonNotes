@@ -48,4 +48,27 @@ Removes and returns the key value from the dictionary. If key does not exist, th
 
 
 Iteration over Dictionary 
+    - use for loops to iterate over keys 
 
+View Objects 
+- read only access to dict keys and vals 
+
+    dict.items() 
+        returns a view object that yields a tuple of key value pairs
+        num_calories = dict(Coke=90, Coke_zero=0, Pepsi=94)
+        for soda, calories in num_calories.items():
+            print(f'{soda}: {calories}')
+        Coke: 90
+        Coke_zero: 0
+        Pepsi: 94
+
+    dict.keys()
+        returns the keys
+    dict.values()
+        returns values 
+
+Nested Dicts 
+    Keys contain a dictionary as a value 
+        students = {}
+        students ['Jose'] = {'Grade': 'A+', 'StudentID': 22321}
+    
