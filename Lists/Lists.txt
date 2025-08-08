@@ -147,3 +147,14 @@ Sorting Lists
     my_list.sort()
 
     sorted_numbers = sorted(numbers)
+
+    also supports the reverse parameter (true or false)
+        - sorted([15,20,25], reverse=True)
+        - reverse sorts the list 
+
+    Other Arguments:
+        - key 
+            - specifies a function to be applied to each element before comparing for sorts 
+            - str.lower, str.upper, str.capitalize 
+        - key_sort = sorted(names, key=str.lower)
+    

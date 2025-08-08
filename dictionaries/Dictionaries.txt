@@ -9,4 +9,43 @@ Dictionaries
 Deleting Values
     - del dict[k]
     - removes k 
-    
+
+
+Key value pairs in a dict 
+
+Operations 
+
+- Indexing operation - returns value from a key 
+    dict[key]
+- Adding a key value pair 
+    dict[key] = value 
+- Deletion 
+    del dict[key]
+- Iteration 
+    key in dict 
+
+Keys can contain multiple values or lists 
+
+Can write out a dictionary or use the dict function dict() with parameters 
+
+    dict = {Bob: A+, Tom: B} is the same as dict(name='Bob, grade=A+, name=Tom, grade=B)
+
+
+Methods 
+
+Remove all items from dictionary 
+    dict.clear()
+
+Reads the value of the key from the dictionary. If the key does not exist in the dictionary, then returns default value specified.
+    dict.get(key,default)
+
+Merges dictionary my_dict1 with another dictionary my_dict2.
+    dict1.update(dict2)
+
+Removes and returns the key value from the dictionary. If key does not exist, then default is returned.
+    dict.pop(key,default)
+
+
+
+Iteration over Dictionary 
+
