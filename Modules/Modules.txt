@@ -1,0 +1,51 @@
+Modules 
+- a file containing Python code that can be imported and used by scripts, other modules, or the interactive interpreter
+- Write functions, scripts, etc then store in a module to import 
+- ends with .py 
+- built in modules come pre installed with python 
+    sys, time, math, etc 
+
+- Uses the import statement 
+
+Importing specific names from modules 
+
+from module import name 
+
+Reloading Modules 
+
+- changing the module's source does not affect the running Python instance
+- reload() function can be used to reload and re-execute the changed module
+
+Packages 
+
+- a directory that, when imported, gives access to all of the modules stored in the directory.
+- Groups related modules together 
+-  import statement and gives the name of the directory where the package is located
+    - directory must include a file called __init__.py.
+
+
+Standard Library
+
+- datetime
+    today 
+    date 
+    timedelta 
+- random 
+    random numbers 
+    .shuffle 
+    .choice 
+    .remove 
+    random.seed(seed_value) seeds the random number generator using the given seed_value.
+    random.randint(a, b) returns a random number between a and b (inclusive).
+- copy 
+    copies objects
+- time 
+- math 
+- os 
+    Operating system informational and management helpers
+- sys 
+    System specific environment or configuration helpers
+-pdb 
+    The Python interactive debugger
+- urlib
+    URL handling functions, such as requesting web pages
