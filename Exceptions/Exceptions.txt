@@ -1,0 +1,108 @@
+Exception Handling
+- handle an exception and continue executing, instead of printing an error message and stopping completely
+- try except blocks 
+
+- try: some code
+- except: exceptions 
+
+Common Exceptions:
+
+- EOFError
+    input() hits end of file without reading any input
+- KeyError
+    Dictionary key not found 
+- ZeroDivisionError
+    Divide by 0
+- ValueError
+    Invalid value 
+- IndexError
+- AttributeError
+    occurs if a function does not exist in an imported module
+- IOError
+    If a file cannot be opened
+
+- Except block continues on to code after the block, unless if part of a loop then goes to next iteration
+
+Multiple exception handlers
+
+- different types of exceptions in a single code block 
+- adding additional except blocks and specifying the specific type of Exception
+    try:
+    except type 1:
+    except type 2: 
+    except ValueError:
+    except ZeroDivisionError:
+    etc...
+    OR
+    try: 
+    except (ValueError, ZeroDivisionError, TypeError):
+- Except: is a catch all for all exceptions 
+
+Raising Exceptions 
+
+- Code that detects an error can execute a raise statement, which causes immediate exit from the try block and the execution of an exception handler
+    try:
+        weight = int(input('Enter weight (in pounds): '))
+        if weight < 0:
+            raise ValueError('Invalid weight.')
+
+    raises a ValueError and outputs to console 
+
+- The as keyword binds a name to the exception being handled
+     except ValueError as excpt:
+        print(excpt)
+        print('Could not calculate health info.\n')
+- The statement except ValueError as excpt creates a new variable excpt that the exception handling code might inspect for details about the exception instance. 
+    Printing the variable excpt prints the string argument passed to the exception when raised.
+
+Exceptions with functions
+
+- If an exception is raised within a function and is not handled within that function, then the function is immediately exited 
+
+- Dont need a try block within a function
+    def get_weight():
+    weight = int(input('Enter weight (in pounds): '))
+    if weight < 0:
+        raise ValueError('Invalid weight.')
+    return weight
+
+- The finally clause of a try statement allows a programmer to specify clean-up actions that are always executed
+
+    try:
+    except:
+    finally:
+
+Finally Block 
+    def divide(a, b):
+    z = -1
+    try:
+        z = a / b
+    except ZeroDivisionError:
+        print('Cannot divide by zero')
+    finally:
+        print('Result is', z)
+    
+    divide(4,0)
+    Cannot divide by 0
+    Result is -1 
+
+Custom exception's
+    Defined in a class 
+
+    raise ValueError("my_num < 0")
+
+    raise LessThanZeroError('my_num must be greater than 0')
+
+    class LessThanZeroError(Exception):
+    def __init__(self, value):
+        self.value = value
+
+    my_num = int(input('Enter number: '))
+
+    if my_num < 0:
+        raise LessThanZeroError('my_num must be greater than 0')
+    else:
+        print('my_num:', my_num)
+
+
+
