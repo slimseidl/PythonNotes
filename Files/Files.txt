@@ -1,0 +1,75 @@
+Reading Files 
+
+- Open()
+    myvar = open('file.csv') 
+- close()
+    closes a file 
+- file .read()
+    reads a file content as a string 
+- file.readlines()
+    returns a list of strings
+    - 1st element = first line
+    - so on so forth 
+
+    read and readlines can be given a number param to specify nubmer of bytes to read 
+
+Writing Files 
+
+-  file.write()
+    - file = open('file.txt', 'w')     w = write, default is read only (r)  
+    - file.write('string of words')
+        strings only 
+    - file.close()
+
+
+    num1 = 5
+    num2 = 7.5
+    num3 = num1 + num2
+
+    f = open('myfile.txt', 'w')
+    f.write(str(num1))
+    f.write(' + ')
+    f.write(str(num2))
+    f.write(' = ')
+    f.write(str(num3))
+    f.close()
+
+- Another open mode is 'a' for appending 
+- Can add a '+' character to the end of a mode, like 'r+' and 'w+' to specify an update mode. 
+- Update modes allow for both reading and writing of a file at the same time.
+
+- Output to a file is buffered by the interpreter before being written to the computer's hard disk
+- A programmer can toggle buffering on/off or specify a buffer size with the optional buffering argument to the open() function
+    - Passing 0 disables buffering
+    - passing 1 enables the default line-buffering, and a value > 1 sets a specific buffer size in bytes
+    - f = open('myfile.txt', 'w', buffering=100)
+        -  buffer to disk every 100 bytes
+- flush()
+     force the interpreter to flush the output buffer to disk.
+
+Interaction with Operating Systems 
+
+-  portability
+    - behaves correctly on the programmer's computer but crashes on another
+    - differnet path separators from windows to linux 
+-  use the os.path module, which contains many portable functions for handling file paths
+    -  os.path.join()
+        - concatenates the arguments using the correct path separator for the current operating system
+        - Instead of writing the literal path = "subdir\\bat_mobile.jpg", a programmer should write path = os.path.join('subdir', 'bat_mobile.jpg')
+        - result in "subdir\\bat_mobile.jpg" on Windows and "subdir/bat_mobile.jpg" on Linux/Mac.
+- other helpful functions
+    checking if a given path is a directory or a file, getting the size of a file, obtaining a file's extension (e.g., .txt, .doc, .pdf), creating and deleting directories, etc
+
+    - os.path.split(path)
+        Splits a path into a 2-tuple (head, tail), where tail is the last token in the path string and head is everything else
+    - os.path.exists(path)
+        - Returns True if path exists, else returns False
+    - os.path.isfile(path)
+        - Returns True if path is an existing file, and false otherwise (e.g., path is a directory)
+    - os.path.getsize(path)
+        Returns the size in bytes of path
+    - os.walk()
+        -  'walks' a directory tree  visiting each subdirectory in the specified path
+        - used as the iterable object in a for loop that yields a 3-tuple for each iteration
+
+Binary Data        
