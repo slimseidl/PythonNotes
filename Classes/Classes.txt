@@ -1,0 +1,121 @@
+Classes 
+
+- Multiple variables are frequently closely related and should thus be treated as one variable with multiple parts
+- two variables called hours and minutes might be grouped together in a single variable called time
+- Class Key Word
+    - used to create a user-defined type of object containing groups of related variables and functions
+    - class ClassName:
+    - defines a new type that can group data and functions to form an object
+    - The object maintains a set of attributes that determines the data and behavior of the class
+
+        class Time:
+    """ A class that represents a time of day """
+        def __init__(self):
+            self.hours = 0
+            self.minutes = 0
+- Instantiation
+    calls the class 
+    my_variable = class()
+
+    This creates an instance of the class 
+    Auto calls the __init__ method 
+    init method has a parameter (self)
+        references the instance being created 
+Methods 
+    - functions defined within a class 
+    - __init__ is a constructor 
+    - creates attributes like self.hours and self.minutes see below 
+        - assigns 0 as a default 
+    
+    class Time:
+    """ A class that represents a time of day """
+        def __init__(self):
+        self.hours = 0
+        self.minutes = 0
+    - Attributes can be accessed using the attribute reference operator "." (sometimes called the member operator or dot notation) 
+
+    my_time = Time()
+        - creates new class instance 
+    my_time.hours = 7
+    my_time.minutes = 15
+
+Class Example with Methods 
+
+    class Person:
+        def __init__(self):
+            self.first = ''
+            self.last = ''
+
+        def get_full_name(self):
+            return f'{self.last}, {self.first}'
+
+Instance Methods 
+    - A function defined within a class 
+    - must have the self parameter as well         
+        class Animal:
+            def __init__(self):
+                self.sound= ""
+            def noise(self, sound):
+
+Class with methods 
+
+    class PersonInfo:
+    def __init__(self):
+        self.num_kids = 0
+
+    # FIXME: Write inc_num_kids(self)
+    def inc_num_kids(self):
+        self.num_kids += 1
+        return self.num_kids
+    
+
+    person1 = PersonInfo()
+
+    print('Kids:', person1.num_kids)
+    person1.inc_num_kids()
+    print('New baby, kids now:', person1.num_kids)
+
+Class Attributes 
+
+    - Defined within the scope of the class and shared among all class instances 
+    - Can be outside an instance method 
+
+        class Marathon:
+            race_distance = 42.195 (in km)
+                - variable is shared across all class instances and remains the same 
+
+        print(MarathonRunner.race_distance)  # Look in class namespace
+            - calls the class name or the instance name to access the variable 
+Instance Attributes 
+    - can be unique to each class instance 
+
+        class Marathon:
+            def __init__(self):
+                self.speed = 0
+
+        runner1 = Marathon()
+        runner1.speed = 7.5
+
+        runner2 = Marathon()
+        runner2.speed = 8.0 
+
+        difference in instance attributes 
+    - assigned using dot notation 
+
+Class Constructors 
+
+    __init__ can be customized with additional parameters
+        - class RaceTime:
+            def __init__(self, start_time, end_time, distance):
+                self.start_hrs = start_hrs
+                self.start_mins = start_mins
+                self.end_hrs = end_hrs
+                self.end_mins = end_mins
+                self.distance = dist
+
+        - when calling the class and creating an instance, the parameters must be passed 
+    - Can have default values
+        def __init__(self, start_time = 1, end_time = 12, distance = 30):
+
+
+Class Interfaces
