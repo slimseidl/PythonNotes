@@ -71,5 +71,37 @@ Interaction with Operating Systems
     - os.walk()
         -  'walks' a directory tree  visiting each subdirectory in the specified path
         - used as the iterable object in a for loop that yields a 3-tuple for each iteration
+    - os.getcwd()
+        - gets and returns the current working directory 
+    - os.path.dirname(fileName)
+        - returns directory name from file path 
+    - os.path.basename(fileName)
+        returns file name from path 
+    - 
 
-Binary Data        
+With Statements 
+
+- can be used to open a file, execute a block of statements, and automatically close the file when complete
+    with open('myfile.txt', 'r') as myfile:
+        - Do something 
+        - File is closed after doing somethign 
+
+CSV Files 
+
+- import csv - standard python package 
+    with open('grades.csv', 'r') as csvfile:
+    grades_reader = csv.reader(csvfile, delimiter=',')
+- Optional delimiter argument (standard is comma)
+
+-  writerow() and writerows methods can be used to write a list of strings into the file as one or more rows.
+
+    with open('gradeswr.csv', 'w') as csvfile:
+    grades_writer = csv.writer(csvfile)
+
+    grades_writer.writerow(row1)
+    grades_writer.writerow(row2)
+
+    grades_writer.writerows([row1, row2])
+
+
+
