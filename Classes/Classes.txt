@@ -119,3 +119,134 @@ Class Constructors
 
 
 Class Interfaces
+    - All methods, instance methods, attributes, etc that contribute to and make up a class 
+    - Methods can be used internally within a class only and called from another method within that class 
+        - prepend these with an underscore
+            def _diff_time(self)
+
+            - methods within a class may call _diff_time to perform an action within a method but diff_time itself may not be used externally
+                - Example of abstraction 
+
+Class Customization
+    - defining how a class should behave for some common operations
+    - implements instance methods with special method names
+        - def __str__(self):
+                can return an output statement 
+
+Example : 
+
+class Car:
+    def __init__(self, make, model, year, miles, price):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.miles = miles
+        self.price = price
+
+    def __str__(self):
+        return f'{self.year} {self.make} {self.model}:\n\tMileage: {self.miles}\n\tSticker price: ${self.price}'
+
+cars = []
+cars.append(Car('Ford', 'Mustang', 2013, 25000, 37999))
+cars.append(Car('Nissan', 'Xterra', 2004, 89500, 7500))
+cars.append(Car('Nissan', 'Maxima', 2012, 25000, 15750))
+
+for car in cars:
+    print(car)
+ 
+Operator Overloading
+
+- Class customization can redefine the functionality of built-in operators like <, >=, +, -, and * when used with class instances
+# lt = less than 
+     def __lt__(self, other):
+        if self.hours < other.hours:
+            return True
+        elif self.hours == other.hours:
+            if self.minutes < other.minutes:
+                return True
+        return False
+    - the Time class contains a definition for the __lt__ method, which overloads the < operator
+
+- lt = <
+- le = <=
+- gt, ge 
+- eq is == 
+- ne is !=
+
+- Compare if something is >, <, =, or != to another 
+
+Overload Examples 
+    class Duration:
+    def __init__(self, hours, minutes):
+        self.hours = hours
+        self.minutes = minutes
+
+    def __eq__(self, other):
+        return (self.hours == other.hours) and (self.minutes == other.minutes)
+
+workday = Duration(10, 30)
+monday_time = Duration(10, 30)
+tuesday_time = Duration(6, 0)
+
+print(tuesday_time == workday)
+print(monday_time == workday)
+
+first print = False
+second print = True
+
+class CarRecord:
+    def __init__(self):
+        self.year_made = 0
+        self.car_vin = ''
+
+    # FIXME add __str__()
+
+    """ Your solution goes here """
+    def __str__(self):
+        return f'Year: {self.year_made}, VIN: {self.car_vin}'
+
+my_car = CarRecord()
+my_car.year_made = int(input())
+my_car.car_vin = input()
+
+print(my_car)
+
+More Overloading 
+
+- numeric operators can be overloaded 
+ - Subtraction:
+            def __sub__(self, other):
+        """ Calculate absolute distance between two times """
+        if self > other:
+            larger = self
+            smaller = other
+        else:
+            larger = other
+            smaller = self
+
+        hrs = larger.hours - smaller.hours
+        mins = larger.minutes - smaller.minutes
+        if mins < 0:
+            mins += 60
+            hrs -=1
+
+        # Check if times wrap to new day
+        if hrs > 12:
+            hrs = 24 - (hrs + 1)
+            mins = 60 - mins
+
+        # Return new Time24 instance 
+        return Time24(hrs, mins)
+    - Methods and descriptions
+        __add__(self, other,)
+        - Subtraction
+        - mul - multiply 
+        - truediv - divide
+        - floordiv 
+        - mod - modulus 
+        - pow - exponent
+        - and 
+        - or 
+        - abs(self) absolut value 
+        - int(self) - conver to integer 
+        - float(self)
