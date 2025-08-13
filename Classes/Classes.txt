@@ -276,3 +276,29 @@ Garbage
     - an integer counter that represents how many variables reference an object
     - reference count is 0, that object is no longer referenced
         - garbage collector will deallocate objects with a reference count of 0
+
+
+Object Orientation 
+
+- Composite types combine several properties in one type.
+- Methods are functions or procedures associated with a type.
+- Subtypes are derived from an existing type, called a supertype. 
+    - The subtype automatically inherits all supertype properties and methods
+    - The subtype may also have additional properties and methods.
+    - A subtype's method may override, or redefine, the behavior of the supertype's inherited method.
+- A composite type is called a class in object-oriented programming languages. A subtype is called a derived class, and a supertype is called a base class.
+
+- Object Databases 
+    - Adds database capabilities, such as persistence and transaction management, to an object-oriented language
+    - Approximately a dozen object databases are available
+- Object Relational Mapping (ORM)
+    - a software layer between the programming language and a relational database
+    - converts object structures and queries to relational structures and queries
+    - simplify object-oriented programming while retaining a relational database
+    - complex ORM queries are inefficient and must be written in SQL
+- Object Relational Database 
+    - extends SQL with an object type
+    - most relational databases do not support an object type
+- Subtables 
+    -  inherits columns and constraints from another table, called a supertable
+        - 
