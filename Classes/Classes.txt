@@ -250,3 +250,29 @@ More Overloading
         - abs(self) absolut value 
         - int(self) - conver to integer 
         - float(self)
+ - isinstance()
+    returns a True or False Boolean depending on whether a given variable matches a given type
+    - stops the operator action 
+- In a nutshell, operator overloading returns an operation function when an operation is used with a class intance 
+    - so class nubmers:
+        def __init__(self, value):
+            self.value = value 
+
+        def __add__(self, other):
+            newvalue = self.value + other.value 
+
+        - when an instance of the numbers class is called, if there is an adding operation, the __add__ function will be used 
+
+Memory Allocatin & Garbage Collection
+
+Memory 
+- The process of an application requesting and being granted memory
+- Python runtime handles memory allocation for the programmer
+    - Python doesnt need to be compiled like C# or C++ 
+
+Garbage 
+- objects are deallocated automatically by the Python runtime
+- reference count
+    - an integer counter that represents how many variables reference an object
+    - reference count is 0, that object is no longer referenced
+        - garbage collector will deallocate objects with a reference count of 0
