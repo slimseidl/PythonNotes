@@ -124,3 +124,28 @@ a lot of times split and join are used together to replace a separator
     tokens = title.split('-')
     title = ':'.join(tokens)
     = Python:Lab:Warmup
+
+format() method
+
+    number = 6
+    amount = 32
+
+    print(f'{} burritos cost ${}'.format(number,amount))
+
+    - basically another way of using f strings 
+- Positional replacement: 
+    'The {1} in the {0} is {2}.'.format('hat', 'cat', 'fat') returns The cat in the hat is fat by indexing 
+
+- Inferred replacement 
+    'The {} in the {} is {}.'.format('cat', 'hat', 'fat')
+    date = 'April {}, {}'
+    print(date.format(22, 2020)) = April 22, 2020
+
+- Named replacement 
+    'The {animal} in the {headwear} is {shape}.'.format(animal='cat', headwear='hat', shape='fat')
+    - Allows a programmer to create a keyword argument that defines a name and value in the format() parentheses
+    - Good practice is to use named replacement when formatting strings with many replacement fields to make the code more readable.
+
+- Double braces {{ }} can be used to place an actual curly brace into a string
+
+
