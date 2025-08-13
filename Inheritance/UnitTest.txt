@@ -1,0 +1,34 @@
+Unit Test Module 
+
+- A critical part of software development is testing that a program behaves correctly
+- Maintaining a test suite, or a set of repeatable tests, that can be run after changing the source code of a program is critical
+- testing the individual components of a program, such as specific methods, class interfaces, data structures
+- The Python standard library unittest module implements unit testing functionality
+
+import unittest
+
+# Class to test Circle
+class TestCircle(unittest.TestCase):
+    def test_compute_area(self):
+        c = Circle(0)
+        self.assertEqual(c.compute_area(), 0.0)
+
+- Performs assertions to check if value meets a certain requirement
+    - Asserting that a value of a function returns -1 for example 
+    - self.assertEqual( c.compute_area(), 78.5 )
+- If the assertion is not true, then an AssertionError will be raised and the current test will report as a failure
+
+Assertation Methods 
+
+assertEqual(a,b) checks a == b 
+assertNotEqual(a,b)
+assertTrue(x) or assertFalse(x)
+assertIs(a,b) a is b 
+assertIsNot 
+assertIsNone
+assertIsNotNone
+assertIn(a,b) a is in b 
+assertNotIn
+AssertAlmostEqual
+AssertGreater
+asserGreaterEqual

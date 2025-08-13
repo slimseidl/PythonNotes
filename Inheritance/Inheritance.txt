@@ -1,0 +1,29 @@
+Derived Classes 
+
+- class will commonly share attributes with another class, but with some additions or variations
+     For example, a store inventory system might use a class called Item, having name and quantity attributes. 
+     But for fruits and vegetables, a class Produce might have name, quantity, and expiration date attributes. 
+     Note that Produce is really an Item with an additional feature, so ideally a program could define the Produce class as being the same as the Item class
+        but with the addition of an expiration date attribute.
+
+    - class Item:
+        self.name
+        self.quantity 
+    - class Produce(Item):
+        self.quantity
+        self.expiration
+
+    - Produce is a derived class 
+        - Contains all methods and attributes from the Items class, with additional attributes and methods 
+        - Inherits the attribues of the base class Item 
+Multiple Inheritance
+- A class can inherit from more than one base class
+- derived class inherits all of the class attributes and methods of every base class
+    - class VampireBat(WingedAnimal, Mammal):
+        derived from WingedAnimal and Mammal classes 
+- Mixins are classes that provide some additional behavior, by "mixin in" new methods, but are not themselves meant to be instantiated
+    - wont be instances of a mixin class 
+    - no def __init__(self) constructor 
+    - just define a set of methods to be used in other classes that inherit from the mixin class 
+    
+
