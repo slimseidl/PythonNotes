@@ -1,0 +1,62 @@
+# Defining a basic class with test uses
+
+class Product:
+    def __init__(self, name, price, num):
+        self.name = name
+        self.price = price
+        self.num = num
+        
+    def set_code(self, name):
+        self.name = name
+    
+    def get_code(self):
+        return self.name
+    
+    def set_price(self, price):
+        self.price = price
+        
+    def get_price(self):
+        return self.price
+        
+    def set_count(self, count):
+        self.num = count
+        
+    def get_count(self):
+        return self.num
+        
+    def add_inventory(self, amt):
+        self.num += amt
+        
+    def sell_inventory(self, amt):
+        self.num -= amt
+
+if __name__ == "__main__":
+    name = 'Apple'
+    price = 0.40
+    num = 3
+    p = Product(name, price, num)
+
+    # Test 1 - Are instance attributes set/returned properly?
+    print('Name:', p.get_code())
+    print(f'Price: {p.get_price():.2f}')
+    print('Count:', p.get_count())
+
+    # Test 2 - Are attributes set/returned properly after adding and selling?
+    num = 10
+    p.add_inventory(num)
+    num = 5
+    p.sell_inventory(num)
+    print('Name:', p.get_code())
+    print(f'Price: {p.get_price():.2f}')
+    print('Count:', p.get_count())
+
+    # Test 3 - Do setters work properly?
+    name = 'Golden Delicious'
+    p.set_code(name)
+    price = 0.55
+    p.set_price(price)
+    num = 4
+    p.set_count(num)
+    print('Name:', p.get_code())
+    print(f'Price: {p.get_price():.2f}')
+    print('Count:', p.get_count())
