@@ -64,13 +64,13 @@ List Methods
     sorts the list 
 
 - list.reverse()
-    reverses order of lsit 
+    reverses order of list
 
 - list.index(x)
     returns index of matching value x 
 
 - list.count(x)
-    coutns number of times x in lsit 
+    coutns number of times x in list
 
 - Enumerate 
     iterates over a list and provides an iteration counter 
