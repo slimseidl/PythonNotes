@@ -45,6 +45,7 @@ while True:
 # course.add_student(Student('Brenda', 'Stern', 2.0))
 # course.add_student(Student('Lynda', 'Robison', 3.2))
 # course.add_student(Student('Sonya', 'King', 3.9))
+# comment
 
     # Calling the studnet class to add students
     course.add_student(Student(first,last,gpa))
