@@ -19,11 +19,23 @@ class ItemToPurchase():
 item_count = 0
 subtotal = 0
 while True:
-    stop = input("Enter 'quit' to stop adding items to cart or any other key to continue:\n")
+    stop = input("\nEnter 'quit' to stop adding items to cart or press Enter to continue:\n")
     if stop == 'quit':
-        break
+        if subtotal == 0:
+            print("Nothing in cart, returning to home page.")
+            break
+        else:
+            sales_tax = subtotal * .07
+            total = subtotal + sales_tax
+            print(f"Cart Subtotal: ${subtotal:.2f}\nSales Tax: ${sales_tax:.2f}\nGrand Total: ${total:.2f}")
+            answer = input("Proceed to checkout?\n")
+            if answer in ("yes","y","Y","Yes"):
+                print("Redirecting to shipping methods")
+                break
+            else:
+                continue
     item_count +=1
-    print(f'Item {item_count}:')
+    print(f'Item {item_count}:\n')
 
     name = input("Enter the item name:\n")
     price = float(input("Enter the item price:\n"))
@@ -34,24 +46,12 @@ while True:
 
     item.print_item_cost()
     subtotal += item.get_total()
-sales_tax = subtotal * .07
-total = subtotal + sales_tax
 
-print(f"Subtotal: ${subtotal:.2f}\nTax: ${sales_tax:.2f}\nGrand Total: ${total:.2f}")
+
+
 
 
     
-# print("Item 1")
-# name1 = input("Enter the item name:\n")
-# price1 = float(input("Enter the item price:\n"))
-# qty1 = int(input("Enter the item quantity:\n"))
-# item1 = ItemToPurchase(name1, price1, qty1)
-
-# print("\nItem 2")
-# name2 = input("Enter the item name:\n")
-# price2 = float(input("Enter the item price:\n"))
-# qty2 = int(input("Enter the item quantity:\n"))
-# item2 = ItemToPurchase(name2, price2, qty2)
 
     
 
