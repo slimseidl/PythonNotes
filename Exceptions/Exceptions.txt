@@ -105,4 +105,6 @@ Custom exception's
         print('my_num:', my_num)
 
 
-
+** Use the try except in the main code block, not in the function 
+    - if using within a function 
+        - use the raise exception like raise ValueError: ('Message')
