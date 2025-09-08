@@ -1,0 +1,23 @@
+VM's are software-based emulations of physical computers that can run an operating system and applications
+
+Set Up 
+
+    - Choose virtualization platform 
+        - ike VirtualBox, VMware, or Hyper-V to create and manage virtual machines
+
+    - Download and install the virtualization software:
+        - download the appropriate version for your operating system
+
+    - Obtain a virtual machine image
+        - a pre-configured operating system environment that can serve as a base for the virtual machine
+        - download pre-built images for different operating systems from various sources
+    
+    - Create a new virtual machine
+        - create a new virtual machine by specifying the desired settings, such as the operating system, memory, storage,
+    
+    - Configure the virtual machine
+        - customize its settings
+    
+    - Start the virtual machine
+        - Launch the virtual machine and install any necessary updates, packages, or dependencies required for your Python development environment
+
