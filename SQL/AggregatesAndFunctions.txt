@@ -1,0 +1,52 @@
+Simple Functions 
+
+    - A simple function operates on an expression enclosed in parentheses, called an argument, and returns a value
+    - Some functions have several arguments, separated by commas, and a few have no arguments
+    - Each simple function operates on, and evaluates to, specific data types 
+    
+    Example Functions 
+
+        - Operate between columns on tables 
+
+        - ABS(n)
+        - LOG(n)
+        - POW(x, y)
+            - Select POW(2, 3) = 8
+        - RAND()
+            - random number between 0 and 1
+            - Select RAND()
+        - Round(n, d)
+            - n rounded to d deciaml places 
+        - SQRT(n)
+            - square root of n 
+            - Select SQRT(25) = 5 
+        - Concat(s1, s2, s3, etc..)
+            - SELECT CONCAT('Super ', Name)  FROM Avatar WHERE ID = 1;
+            - Select Concat('Super ', CustName) From Customer Where CreditRating = 'A+'
+                - Returns Super Followed by Customer's name where customer credit rating is an A+ 
+        - Lower()
+        - Upper()
+        - Replace(s, from, to)
+            - s with all occurrences of from replaced by to
+            - SELECT REPLACE(Orange', 'O', 'St'); = STRANGE 
+        - Substring(s,  starting position, len)
+            - Substring of s that starts at position starting pos with length len
+            - SELECT SUBSTRING ('Boomerang', 1, 4); = BOOM 
+        - CURDATE()
+            - Current date, time, or date and time in
+            - Select curdate() 
+        - Now()
+            - same as cur date 
+        - Day(date), month(date), year(date)
+            - day month or year of a date
+            - Select Month('2025-10-15') returns 10
+        - Hour, minute, second (time)
+            - returns an hour minute or second of a time given 
+        - DateDiff(date1, date2)
+            - number of days between dates 
+        - TimeDiff (date1, date2)
+            - amount of time between dates 
+    
+Aggregate Functions 
+
+    - 

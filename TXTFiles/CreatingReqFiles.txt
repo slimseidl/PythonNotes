@@ -1,0 +1,39 @@
+Requirements.txt Files 
+
+    - a text file that lists a Python project's dependencies
+    - use it to specify the exact versions of libraries and packages required for the project to run correctly
+    - specify the project's external dependencies
+    - lists the names and versions of the packages
+    - also includes comments in the file
+
+    - Benefits 
+        - provides a centralized location to define and manage the project's dependencies
+        - all developers working on the project can install the required packages
+        - can recreate the same development environment on different machines
+        - CI/CD system can automatically install the required packages and run tests
+        - allows for better collaboration and project tracking within versioning 
+    
+    - Creating Requirements.txt files 
+
+        - pip freeze 
+            - generate a list of installed packages and their versions
+            - run pip freeze > requirements.txt to redirect the output to a file named requirements.txt
+                - Puts all current requirements into requirements.txt file 
+            
+        - Work within a virtual environemnt 
+            - Install with python -m venv .venv
+            - Activate with .venv\Scripts\Activate
+            - Deactivate with "deactivate"
+
+        - Install required packages to virtual env 
+            - pip package manager to install the necessary packages
+            - pip install package-name for single packages 
+            - pip install -r requirements.txt for req's file 
+
+        - Generate requirements.txt 
+            - pip freeze > requirements.txt
+        
+        - Review and customize the requirements.txt file
+            - removing unnecessary packages or modifying version constraints
+        
+

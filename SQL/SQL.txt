@@ -1,0 +1,116 @@
+Relational Databases 
+
+    - Many tasks in data science involve extracting and manipulating data from a database
+    - Structure 
+
+        - Table, Row, Column, Cell 
+        - One value per cell. A cell cannot contain multiple values.
+        - No duplicate column names
+        - No duplicate rows
+        - No row order. The organization of rows on storage media, such as a disk drive, never affects query results.
+
+NULLs
+
+    - The result of NOT NULL is NULL.
+    - TRUE AND NULL evaluates to NULL. TRUE OR NULL evaluates to TRUE.
+
+
+Keys 
+
+    - A unique column never contains duplicate values in different row
+    - Every table has a primary key 
+        - a column, or group of columns, that identifies individual rows
+        - must be unique and not NULL
+    - A foreign key is a column, or group of columns, that refer to a primary key
+        - must either be NULL or match some value of the referenced primary key
+        - prevents references to non-existent rows
+    -  data types of the foreign and primary keys must be the same, but the names may be different
+    - foreign key is usually in a different table than the referenced primary key, but may be in the same table
+    -  primary key is marked by a solid circle (●)
+    - foreign key is marked by an empty circle (○) and an arrow leading to the referenced primary key
+
+SQL 
+
+    - A keyword is a reserved word with special meaning.
+        - most database systems, keywords and identifiers are not case-sensitive (select vs SELECT)
+    - A literal is a fixed numeric or text value
+    - An identifier is a user-defined name for a table, column, database, etc 
+    - A clause groups a keyword with identifiers and expressions
+    - A statement is a complete database action
+
+Simple Queries 
+
+    - Operators 
+
+        - An operator is a symbol that computes a value from one or more other values, called operands
+            - Arithmetic operators compute numeric values from numeric operands
+            - Comparison operators compute logical values TRUE or FALSE
+            - Logical operators compute logical values from logical operands
+            - unary operator has one operand
+                - NOT is unary
+            - binary operator has two operands
+                - most operators are binary 
+            - Arithmetic and comparison operators return NULL when either operand is NULL
+
+Expressions 
+
+    - An expression is a string of operators, operands, and parentheses that evaluates to a single value
+    - Operator precednece in expressions:
+
+        - unary (-)
+        - ^
+        - * / %
+        - + - 
+        - = != < >
+        - NOT 
+        - AND 
+        - OR 
+
+SELECT Statements 
+
+    - has a SELECT clause and a FROM clause
+    - Select * = ALL 
+    - Can use operators in select statemnets 
+        - Select balance + payment from orderhead
+        - SELECT 2 * (Balance - Payment)
+    
+WHERE clause 
+
+    - Filter 
+
+IN Operator 
+
+    - WHERE Language IN ('Dutch', 'Kongo', 'Albanian');
+
+LIKE Operator 
+
+    - use % to match any number of chars 
+        - like 'L%t' matches lot, lift, loot, or even "lol cat"
+        - like '20-%'
+    - use _ to match exactly one char 
+        - like L_t matches lit and lot but not loot 
+
+Distinct Clause 
+
+    - used with a SELECT statement to return only unique values
+        - Select Distinct from where 
+    
+Order By Clause 
+
+    - sort order 
+    - select from where order by 
+    - use DESC for descending order 
+        - order by field desc 
+    
+Limiting Clauses
+
+    - limit the number of rows returned by a query
+    - MySQL supports a LIMIT clause
+        - Select From Limit 20; = top 20 rows 
+    - SQL Server supports a TOP clause
+        - Select Top 20 * From 
+    - Oracle uses FETCH 
+        - Select From Fetch FIRST 20 Rows Only;
+    - used without an ORDER BY clause, the rows that appear are unpredictable
+        - usually used with an ORDER BY clause
+    

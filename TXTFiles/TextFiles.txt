@@ -1,0 +1,60 @@
+Text File Processing 
+
+    - Python programs can output data to a text file
+    - When getting data from a text file, or when writing data to a text file, you must use strings
+    - Numbers must be converted to strings prior to output
+    - Strings must be converted back to numbers after the data is inputted
+
+Paths 
+
+    - A path identifies the location of the file to be utilized. A path can be absolute or relative.
+    - Absolute 
+        - path that includes all information required to find the file, regardless of where the script is
+        - /Users/username/Documents/Python Scripts/fileio/data/testfile.txt.
+        -  useful if the Python scripts are not stored in the same parent folder as the target files
+    - Relative 
+        - path that starts from the directory where the Python script is stored
+        - if the Python script file is stored in the fileio subdirectory
+            -  relative address to the same file is data/testfile.txt 
+        - shorter, but they depend on the location of the Python script to work
+
+Input / Output 
+
+    - open() 
+        - Before we can read or write a file, we must open it
+        - takes two parameters: filename and mode.
+    
+    - read() 
+        - reads a string from an open file
+    
+    - write()
+        - writes any string to an open file
+        - fileObject.write(string);
+    
+    - close()
+        -  flushes any unwritten information and closes the file object
+        - fileObject.close();
+
+
+Processing TXT files 
+
+    - Opening Files 
+
+        - open("path to the file","r,a,w,x")
+            - r = read 
+            - a = open for appending, add new content 
+            - w = write 
+            - x = new file with name 
+
+        - To open a file for input, use "r"
+        - Example 
+
+            # Open our file in read mode
+            f = open("data/flatland01.txt", mode="r") 
+            
+            # Read and display text file 
+            print(f.read())
+            
+            # Close our file resource
+            f.close()
+
