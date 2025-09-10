@@ -49,4 +49,37 @@ Simple Functions
     
 Aggregate Functions 
 
-    - 
+    - processes values from a set of rows and returns a summary value
+    - Common Aggregates:
+
+        - Count()
+        - Min/Max()
+            - SELECT MIN(Salary) From Employee 
+        - Sum()
+        - Avg()
+        - Variance()
+            - standard variance of selected values 
+
+    - Group By Clause 
+
+        - groups rows with identical values into a set of summary rows
+        - Important:
+
+            - One or more columns are listed after GROUP BY, separated by comma
+            - GROUP BY clause returns one row for each group
+            - Each group may be ordered with the ORDER BY clause
+            - GROUP BY clause must appear before the ORDER BY clause and after the WHERE clause (if present)
+
+    - HAVING Clause 
+
+        - Filters the group by clause instead of WHERE 
+        - follows the GROUP BY clause and precedes the optional ORDER BY clause
+        - must include the same aggregate function that appears in the SELECT
+        - Ex: 
+
+            SELECT CountryCode, SUM(Population)
+            FROM City
+            GROUP BY CountryCode
+            HAVING SUM(Population) > 2300000;
+
+    

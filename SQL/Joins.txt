@@ -1,0 +1,85 @@
+Joins
+
+    - Multi-table reports are written with join statements
+    - A join is a SELECT statement that combines data from two tables
+        - Left / Right Tables 
+    - The columns must have comparable data types
+    - Usually, a join compares a foreign key of one table to the primary key of another
+
+    - Dont necessarily need a join for simple queries
+
+        SELECT Language, Population
+        FROM Country, City
+        WHERE 
+        Country.code = City.code
+        ;
+    
+
+Prefixes and aliases
+
+    - Occasionally, join tables contain columns with the same name
+    -  names must be distinguished with a prefix. The prefix is the table name followed by a period
+        - orderhed.custname 
+    - Aliases 
+        - prefixes make table / col names too long, use an alias with AS 
+        - Select department.name as Team, employee.name as emp 
+        - uses the AS keyword to create an alias 
+
+Join Types 
+
+    - INNER JOIN, which selects only matching left and right table rows.
+    - FULL JOIN, which selects all left and right table rows, regardless of match.
+    - The join clause appears between a FROM clause and an ON clause
+
+    - The FROM clause specifies the left table
+    - The INNER JOIN or FULL JOIN clause specifies the right table
+    - The ON clause specifies the join columns
+
+            SELECT Department.Name AS Group,
+        Employee.Name AS Supervisor
+        FROM Department
+        Inner join Employee
+        ON Manager = ID;
+
+    - Left and Right Joins 
+        - LEFT JOIN selects all left table rows, but only matching right table rows.
+        - RIGHT JOIN selects all right table rows, but only matching left table rows.
+
+    - Equijoins 
+        - compares columns of two tables with the = operator
+        - Most joins are equijoins
+        - A non-equijoin compares columns with an operator other than =, such as <, >, ≤, and ≥
+        - So you can use a join where a column is > another column or other logical operands 
+        - non equijoin example 
+
+            Buyer Table 
+            Name	MaxPrice
+            Lisa Ellison	600000
+            Sam Snead	900000
+            Jiho Chen	500000
+            Maria Rodriguez	800000
+
+            Property Table 
+            Address	Price
+            23 Maple Street	700000
+            4 Oak Street	850000
+            59 Alvarado Avenue	1299000
+            800 Richards Road	1000000
+
+            SELECT Name, Address
+            FROM Buyer
+            LEFT JOIN Property
+            ON Price < MaxPrice;
+
+            Result 
+            Name	Address
+            Lisa Ellison	NULL
+            Sam Snead	23 Maple Street
+            Sam Snead	4 Oak Street
+            Jiho Chen	NULL
+            Maria Rodriguez	23 Maple Street
+
+            ** non-equijoin selects all buyers along with properties priced below the buyer's maximum price.
+
+
+
