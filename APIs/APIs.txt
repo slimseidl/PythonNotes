@@ -1,0 +1,4 @@
+API's 
+
+    - An API is a mechanism that allows communication between software applications
+    - 

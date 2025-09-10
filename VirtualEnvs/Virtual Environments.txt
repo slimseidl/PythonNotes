@@ -71,3 +71,26 @@ Activation of Virtual Environments
     To activate a virtual environment in Python, you typically use the source command
     followed by the path to the activate script located in the virtual environment directory. 
     In this case, the correct command would be "source myenv/bin/activate."
+
+Steps for New Projects 
+
+# 1. Create project folder
+mkdir my_project
+cd my_project
+
+# 2. Create a virtual environment
+python -m venv venv
+
+# 3. Activate the environment
+# Windows (PowerShell)
+venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate
+
+# Mac/Linux
+source venv/bin/activate
+
+# 4. Install project dependencies
+pip install flask flask-restful pandas etc 
+
+# 5. Save dependencies for reproducibility
+pip freeze > requirements.txt
