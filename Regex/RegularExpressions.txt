@@ -1,0 +1,75 @@
+Regex or Regular Expressions 
+
+    -  tools for pattern matching and text manipulation
+    - provide a concise and flexible way to search, match, and manipulate strings based on specific patterns
+    - uses the RE module in Python 
+
+    Concepts and Functions 
+
+        - Pattern creation
+
+            - uses a combination of ordinary and special characters known as metacharacters
+            - abc" matches the string "abc" exactly
+            - "a.c" matches any string that has an "a," followed by any character, and then a "c."
+
+        - Matching 
+
+            - most common function is re.match()
+                - checks if the pattern matches at the beginning of the string
+            - re.search()
+                - searches the entire string for a match
+        
+        - Modifiers
+
+            - the "i" modifier performs a case-insensitive match, ignoring the distinction between uppercase and lowercase
+            - add modifiers to the pattern by including them as an argument to the matching functions
+
+        - Character Classes 
+
+            - allow you to match a set of characters at a specific position in the string
+            - "[aeiou]" matches any vowel
+            - can also define ranges of characters, such as "[a-z]" for any lowercase letter
+            - Predefined character classes, like "\d" for digits or "\s" for whitespace, are also available.
+
+        - Quantifiers 
+
+            - specify the number of occurrences of a pattern that should be matched
+            -  "*" quantifier means "zero or more occurrences
+            - "+" quantifier means "one or more occurrences.
+            - "?" (zero or one occurrence) and "{n}" (exactly n occurrences)
+
+        - Grouping 
+
+            - Parentheses can group parts of a pattern
+
+        - Replacement 
+
+            - string substitution
+            - re.sub() function allows you to replace occurrences of a pattern in a string with a specified replacement
+
+    -  we want to find one or another value we can do so by using the | symbol between the two strings that we are interested in searching for
+        - case sensitive 
+        - see ipynb file
+
+Special Sequences with findall 
+
+    \A: This matches if the characters defined are at the beginning of the string "\AIt"
+    \b: This matches if the characters defined are at the beginning or at the end of a word "\bain" r"ain\b"
+    \B Returns a match where the specified characters are present, but NOT at the beginning (or at the end) of a word (the "r" in the beginning is making sure that the string is being treated as a "raw string") r"\Bain" r"ain\B"
+    \d Returns a match where the string contains digits (numbers from 0‐9) "\d"
+    \D Returns a match where the string DOES NOT contain digits "\D"
+    \s Returns a match where the string contains a white space character "\s"
+    \S Returns a match where the string DOES NOT contain a white space character "\S"
+    \w Returns a match where the string contains any word characters (characters from a to Z, digits from 0‐9, and the underscore _ character) "\w"
+    \W Returns a match where the string DOES NOT contain any word characters "\W"
+    \Z Returns a match if the specified characters are at the end of the string
+
+Split Method 
+
+    Same as string splitting 
+    re.split("\s", txt)
+        splits tokens on whitespace 
+
+    - split takes other parameters too 
+        - maxsplit
+            - splits according to the value 
