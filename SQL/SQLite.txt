@@ -1,0 +1,83 @@
+SQLite 
+
+    - a software library that provides a relational database management system (RDBMS)
+    - serverless, file-based database engine, which means a single file on the disk stores the entire database
+    - supports Structured Query Language (SQL) for database interaction, allowing you to create, read, update, and delete data
+    - widely used in embedded systems, mobile applications
+    - requires you to download and install the SQLite command-line shell or use SQLite libraries in your programming language
+    - allows you to create databases and tables, define their structure and relationships, and perform queries to retrieve, update, and delete data
+    - supports various data types
+    - offers features like indexing, views, triggers, and user-defined functions
+    - works on Windows, macOS, Linux, and many other operating systems
+
+
+How To Use 
+
+    - Database Creation 
+
+        - Use the command sqlite3 to create a new SQLite database file.
+        - Example: sqlite3 mydatabase.db
+    
+    - Creating tables
+
+        - (CREATE TABLE)
+        - Specify the column names, data types, and any constraints.
+        - Example: CREATE TABLE employees (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)
+
+    - Inserting data
+
+        - INSERT INTO
+        - Specify the table name and column values for each record.
+        - INSERT INTO employees (name, age) VALUES ('John Doe', 30)
+
+    - Query Data 
+
+        - SELECT * FROM employees WHERE age > 25;
+
+    - Update Data 
+
+        - UPDATE employees SET age = 35 WHERE name = 'John Doe';
+
+    - Delete Data 
+
+        - DELETE FROM employees WHERE age > 40;
+
+Access with Pandas 
+
+    - Install required libraries
+
+        - pip install pandas
+        - If you are using SQLite, then depending on the connected database, you can, for example, install SQLAlchemy with the following command:
+            - pip install sqlalchemy
+    
+    - Import required libraries
+
+        - import pandas as pd, import sqlalchemy
+
+    - Establish a connection to the database
+
+        - Use the SQL library to establish a connection to your database
+
+        from sqlalchemy import create_engine
+        # Create a connection string for SQLite
+        db_url = 'sqlite:///path/to/database.db'
+        # Create a database engine
+        engine = create_engine(db_url)
+
+    - Query the database using pandas
+
+        - use pandas to query the database
+        - read_sql_query()
+
+        # Define the SQL query
+        sql_query = 'SELECT * FROM table_name' 
+
+        # Execute the SQL query and retrieve the results as a DataFrame
+        df = pd.read_sql_query(sql_query, engine)
+    
+    - Perform data analysis or manipulation with pandas dataframes 
+
+    
+
+
+

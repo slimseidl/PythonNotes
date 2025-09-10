@@ -1,0 +1,22 @@
+Data Pipelines 
+
+    - A data pipeline is a series of data processing steps
+    - Data pipelines contain three elements: the data source, the data processing, and the data destination.
+    - The data source is the data's original location
+    - data processing, a query requests the desired features and instances for the analysis
+    -  data destination is a place where the data scientist can access and interact with the data.
+
+SQL to Pandas Translation 
+
+    - pandas contains a method, DataFrame.query(), which allows users to write SQL-like queries
+    - DataFrame.query("Feature == 0") will return all instances in the dataset for which Feature is exactly equal to 0
+    - Can use and, or, not 
+        - &, | = OR, ~ = not
+    - In pandas, the dataframe is called first instead of the features. Adding .query defines the query
+        - DataFrame being the table name
+        - Where statement is passed to the .query method in parentheses
+        - Select clause passed to brackets
+            - OrderHed.query("OrderDate == '2025-01-01')['CustName', 'CustID']
+
+
+    

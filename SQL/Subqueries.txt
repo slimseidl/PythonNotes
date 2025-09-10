@@ -1,0 +1,60 @@
+Subqueries
+
+    - sometimes called a nested query or inner query
+    - a query within another SQL query
+    - typically used in a SELECT statement's WHERE clause to return data to the outer query and restrict the selected results
+    - placed inside parentheses ()
+    - Can Only compare with a single value if using logicals (<, >, =)
+
+        SELECT Language, Percentage
+        FROM CountryLanguage
+        WHERE Percentage > 
+            (SELECT Percentage
+            FROM CountryLanguage
+            WHERE CountryCode = 'ABW'
+                AND IsOfficial = 'T');
+
+Correlated Subqueries 
+
+    - when the subquery's WHERE clause references a column from the outer query
+    - rows selected depend on which row is currently being examined by the outer query
+    
+    Example:
+
+        SELECT Name, CountryCode
+        FROM City
+        WHERE 2 <=  
+            (SELECT COUNT(*)
+            FROM CountryLanguage
+            WHERE CountryCode = 
+        City.CountryCode
+        );
+
+EXISTS 
+
+    - Correlated subqueries commonly use the EXISTS operator
+    - returns TRUE if a subquery selects at least one row and FALSE if no rows are selected
+    - NOT EXISTS operator returns TRUE if a subquery selects no rows and FALSE if at least one row is selected
+
+        SELECT Name 
+        FROM Employee E
+        WHERE EXISTS
+        (SELECT * 
+        FROM Family
+        WHERE Id = E.Id 
+            AND Relationship = 'Spouse');
+
+Flattening subqueries
+
+    - Many subqueries can be rewritten as a join
+    - Most databases optimize a subquery and outer query separately, whereas joins are optimized in one pass
+    -  joins are usually faster and preferred
+    - Replacing a subquery with an equivalent join is called flattening a query
+    
+    - Flattening steps: 
+
+        - Retain the outer query SELECT, FROM, GROUP BY, HAVING, and ORDER BY clauses.
+        - Add INNER JOIN clauses for each subquery table,
+        - Move comparisons between subquery and outer query columns to ON clauses.
+        - Add a WHERE clause with the remaining expressions in the subquery and outer query WHERE clauses.
+        - If necessary, remove duplicate rows with SELECT DISTINCT.
