@@ -1,4 +1,14 @@
 API's 
 
     - An API is a mechanism that allows communication between software applications
-    - 
+    - if __name__ == '__main__'
+        -  if we run the code from the script that it is in, then we can execute what lives within the if statement
+
+    - API running on http://127.0.0.1:5000/ if we maintain the persistence of the script APIs.py 
+        - if we want to programmatically get the data from our own API, we need to use the requests package and access the data
+        - interactively access the API running on our own machine using the following code:
+
+            import requests 
+            data = request.get('http://127.0.0.1:5000/')
+            type(data)
+            
