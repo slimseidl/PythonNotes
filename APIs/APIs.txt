@@ -11,4 +11,54 @@ API's
             import requests 
             data = request.get('http://127.0.0.1:5000/')
             type(data)
-            
+
+    - Authentication 
+
+        - So far our API has been public but what if we want to secure it in some way?  
+        - Basic Authentication 
+
+            - a server asking for a username and a password to allow access to private data
+            - Basic Auth is performed over HTTP and is encrypted using SSL to protect the username and password being transmitted
+        
+        - API Key Auth 
+
+            - Requires the API to be accessed with a unique key
+            - key is usually a long series of letters and numbers that is completely separate from the user's login details
+            - can be intentionally limited so that they provide access only to the bits of data and services users we need, rather than granting access to everything
+        
+        - Oauth Tokens 
+
+            - a prevailing standard that applications can use to provide client applications with secure access
+            - operates using the principles of API key authentication
+            - Authorizes with access tokens rather than credentials
+            -  authentication request is sent from the client application to a server 
+            - token is returned to the client application over HTTPS, which then passes it to the API server
+                - apps that ask you to login with your Google, Facebook, or Twitter account
+                - acting as an authentication server
+
+API's via HTTP Guide 
+
+    - Import the necessary libraries
+        - requests
+        - flask 
+
+    - Make an HTTP request
+        - GET, POST, PUT, DELETE, etc
+        - requests.get(), requests.post(), requests.put(), or requests.delete()
+
+    - Provide necessary parameters or data.
+        - might need to pass query parameters, request headers, or request body data
+
+    - Handle the response
+        - access the response data, status code, headers, and other information
+        - request.status_code()
+            - 200s = success
+            - 400s or 500s = Errors
+        - request.json()
+
+    - Process the response data
+        - often return data in formats like JSON or XML
+        - json module to handle JSON responses and convert them into Python objects
+            - dumps / loads 
+
+    - Handle errors and exceptions

@@ -2,7 +2,9 @@ from flask import Flask
 from flask_restful import Resource, Api
 
 app = Flask(__name__)
+# Creates the app 
 api = Api(app)
+# creates the api 
 
 class HelloWorld(Resource):
     def get(self):
