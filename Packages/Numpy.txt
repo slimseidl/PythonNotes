@@ -1,0 +1,73 @@
+Packages and Libraries 
+
+    - A Python package is a collection of related functions, classes, and objects that are loaded from the hard drive to extend the functionality of Python
+    - import pandas as pd 
+    - import matplotlib.pyplot as plt
+    - Functions and objects in an imported package are accessed via dot notation
+        - pd.read_csv
+    - Pip is a package manager 
+        - installs, updates, and removes packages while ensuring dependencies are maintained
+    
+    - Common packages 
+
+        - pandas as pd 
+        - sklearn as sk 
+        - seaborn as sns 
+        - scipy.stats as sp.stats 
+        - statsmodels as sm 
+
+Numpy 
+
+    - provides tools for scientific and mathematical computations
+    - includes functions that can be used to perform common linear algebra operations, fast fourier transforms, and statistics
+    - uses an array data type that is conceptually similar to a list, consisting of an ordered set of elements of the same type
+        - created using the array() constructor from the numpy package
+            import numpy as np
+            my_array1 = np.array([15.5, 25.11, 19.0])
+
+    - numpy provides functions that create empty pre-sized arrays
+        Zero Function 
+
+        - zeros() function creates an array with a 0 for every element, and ones() uses 1 for every element
+        - argument to zeros() and ones() is an integer (length) for a 1-dimensional array
+
+    Linspace Function 
+
+    - creates a sequence by segmenting a given range with a specified number of points
+    -  linspace(0, 1, 11) creates a sequence with 11 elements between 0 and 1 inclusive: 0, 0.1, 0.2, ..., 0.9, 1.0.
+        -   np.linspace(0.25,1.0,4) = [ 0.25 0.5 0.75 1.0 ]
+
+
+    - Mathematical operations between arrays are performed between the matching elements of each array. 
+    - For example, [5 5 5] + [1 2 3] would compute [5+1 5+2 5+3], or [6 7 8]. 
+
+
+    - mathematical functions such as polynomial computations, matrix algebra, and statistical analysis
+    - often apply these functions to one- or two-dimensional data, represented with the NumPy ndarray
+    
+    - Numpy Arrays 
+
+        - ndarray type is an ordered, indexed, and mutable container
+        - all elements must be of the same type
+        - An ndarray object is called an array and is created by the array() function
+        - An array may have zero, one, or many dimensions
+            - A zero-dimensional array consists of a scalar object. Ex: 2
+            - A one-dimensional array consists of a container of scalars. Ex: [2, 4, 6, 8]
+            - A two-dimensional array consists of a container of containers of scalars. Ex: [ [2, 4, 6, 8], [12, 14, 16, 18] ]
+        - The shape of an array is a tuple of level sizes
+            - The shape of [ [2, 4, 6, 8], [12, 14, 16, 18] ] is (2, 4)
+            - Array elements are accessed with index notation. Ex: array[2, 5]
+
+    - Array Functions 
+
+        - myArray.shape 
+        - myArray.size 
+        - sort(array) is equivalent to array.sort()
+        - array = np.array( [ ['a', 'a'], ['b', 'b'], ['c', 'c'] ] )
+            - shape = (3, 2)
+        
+
+
+
+        
+    

@@ -62,3 +62,76 @@ API's via HTTP Guide
             - dumps / loads 
 
     - Handle errors and exceptions
+
+Third Party API's
+
+    - Many organizations have created public web APIs that provide access to the organization's data 
+    - Websites rely on third-party web APIs to integrate with social media, obtain maps and weather data, or access collections of data
+
+    - A developer usually registers with the third party to obtain an API key
+        - API key identifies who or what application is using the web API
+        - API key helps the third party limit the number of requests made to the API in a fixed time period
+        - To obtain an API key, developers must agree to restrictions the third party places on data
+    - Most third-party web APIs are RESTful
+        - A RESTful web API is a web API that is called with a URL that specifies API parameters and returns JSON or XML containing the API data
+        - http://linkedin.com/api/article?id=123 specifies the article ID 123
+
+    - For a third-party web API requiring an API key, the API key must be transmitted with every API request.
+
+    - Open Weather API 
+
+        - http://api.openweathermap.org/data/2.5/weather
+        - Sign up for an account to obtain an API key.
+        - When your API key is ready, try the link: http://api.openweathermap.org/data/2.5/weather?zip=90210&units=imperial&appid=APIKEY 
+            - to make an API request for the weather with ZIP 90210. The page should indicate an invalid API key was used.
+        - Replace APIKEY in the URL's query string with your API key, and reload the webpage. The JSON-encoded weather information for 90210 should be displayed.
+        - Change the ZIP code in the URL's query string to your ZIP code, and reload the URL to see the weather in your ZIP code.
+
+    - Cross Origin Requests 
+
+        - Cross-Origin Resource Sharing (CORS)
+            - W3C specification for how web browsers and web servers should communicate when making cross-origin requests
+        - JSON with Padding (JSONP)
+            - a technique to circumvent cross-origin restrictions by injecting <script> elements dynamically into a webpage
+
+        -CORS is most common and easiest to use 
+
+Restful API's 
+
+    - Representational State Transfer 
+    - architectural style for designing networked applications that adhere to a set of principles and constraints
+    -  rely on the concept of resources, entities you can access and manipulate using standard HTTP methods
+        - GET, POST, PUT, and DELETE
+    - Using RESTful API's 
+
+        - Import the necessary libraries
+            - Import Requests 
+
+        - Identify the API endpoints
+            - Understand the documentation or specification 
+
+        - MAke HTTP Requests 
+            - Use the appropriate HTTP method to send requests to the desired API endpoint
+
+        - Provide parameters 
+            - may need to pass additional parameters or data along with the request
+            - included as arguments to the method 
+
+        - Handle the resposne 
+            - receive a response from the API server
+            - Access response data 
+            - status codes 
+            - headers 
+        
+        - Process Response Data 
+            - xtract the relevant information from the response data
+            - JSON and XML 
+
+        - Handle Errors 
+
+
+
+
+
+
+
