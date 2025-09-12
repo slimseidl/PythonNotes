@@ -1,0 +1,37 @@
+Structuring data
+
+    - Formatting data
+
+        - All data within a single column and similar data in multiple columns should be stored in a uniform format
+        - All dates and times might be stored as the datetime data type, with a 24-hour clock in Coordinated Universal Time
+        - All lengths might be stored as meters.
+            - facilitates aggregating and comparing data within and across columns
+    
+    - Feature Scaling 
+
+        -  numeric features in a dataset often have different scales
+        - Feature scaling converts numeric features to uniform ranges
+        - Common Methods:
+
+            - Standardization converts features to a range centered at 0, with 1 representing a standard deviation
+
+                XStandardized = (Xoriginal - meanX) / standardDevX
+
+                - standardized value is a z-score 
+                - most between -2 and 2
+            
+            - Normalization converts features to the range [0,1]
+
+                Xnormalized = (Xoriginal - minX) / (maxX - minX)
+
+                - Standardization is usually preferred over normalization, since standardization positions values relative to the mean and standard deviation
+
+    - Unpacking Data 
+
+        - Some features encode multiple types of data as a single value
+            - PartCode feature may include characters that describe the part color
+        - An overloaded feature encodes multiple types of data
+        - A simple feature contains only one type of data
+        - data encoded in an overloaded feature should be extracted and stored as new, simple features
+            - overloaded feature usually remains in the dataset as reference information
+        
