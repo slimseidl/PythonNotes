@@ -1,0 +1,42 @@
+Web Scraping 
+
+    - Web crawling is the process of getting data from one or more urls which can be obtained by traversing through a websites html
+        - a website has a front page with lots of links to other pages and you want to get all the information from all the links
+            -  traverse through all the links programmatically and then visit all the relevant pages
+    - Web scraping is the process of getting the information from the page in question
+        - programmatically get the information from the page and when you have that you would be able to store or process the data
+
+    Cautionary Advice:
+
+        - Check if you are allowed to get and use data from a given website
+            - Check the website's terms of use 
+            - while they may not be able to stop you obtaining the data via web scraping they may have something to say that if they see the data used in any research so be carefu
+        - Check if there is a fair usage policy
+            - Some websites are happy for you to scrape the data as long as you do it in an appropriate way
+        - if they have an application programming interface (API) available then you should be using that
+    
+    Scraping Through a web browser
+
+        - use the tools of the web browser to inspect what HTML refers to what elements of the page
+        - selecting the element of the page and inspecting the corresponding HTML and then it showing what the html refers to that elemen
+    
+    Saving the page and physically searching
+
+
+    - BeautifulSoup
+
+        - A web parser for processing web scraped data 
+        - HTML parser
+        - can also parse xml by using the lxml library
+
+        from bs4 import BeautifulSoup
+        BeautifulSoup(content_to_be_parsed, "parser_name")
+
+        # content to be parsed is the content from the site
+        # use requests to get the data 
+        # BS4 parses the json data returned 
+
+        # Parser Types (insert into parser name )
+
+        # html.parser - default Python html parser 
+        # lxml - lxml python library 

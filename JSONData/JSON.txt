@@ -1,0 +1,79 @@
+JSON 
+
+    - JavaScript Object Notation
+    - an efficient, structured format for data based on a subset of the JavaScript language
+    - JSON has six basic data types:
+
+        - Strings 
+            - Unicode characters enclosed within double quotes (")
+            - A few special characters must be escaped with a backslash (\
+        - Number 
+        - Object 
+            - Unordered list of zero or more name/value pairs separated by commas and enclosed within braces ({})
+            -  {"Name": "Joe", "Age": 35 }
+        - Arrays
+        - Boolean
+        - Null 
+
+    - objects can contain arrays and arrays can contain objects to any arbitrary depth
+
+    Working with JSON
+
+        - JSON.parse() method
+            - creates a JavaScript object from a string containing JSON
+            - JSON.parse('[1,"two",null]') converts the string '[1,"two",null]'into the JavaScript array [1,"two",null]
+            - optional parameter for a reviver function
+                - reviver function is used to modify parsed values before being returned, and is helpful when a JSON string represents a data type not available in JSON
+
+
+        - JSON.stringify() method
+            - creates a string from a JavaScript object
+            - creates a string representation of any passed object by either calling the object's toJSON() method
+            -  has two optional parameters: a replacer and a spacer
+
+    Processing JSON Files
+
+        - Python has a built‐in package called JavaScript Object Notation (JSON)
+        
+        - Creating a JSON file with dump() (see dump.py)
+
+            - As with other file types, we can open a JSON file in write mode using the option "w"
+            - can serialize Python objects into JSON‐encoded data using the dump()
+        
+        - Convert file to JSON with dumps() (see dumps.py)
+
+            - convert a Python dictionary into a JSON‐encoded string object
+            - Pass a dictionary object to json.dumps(), which then returns a string
+
+            - use custom indenting with dumps to make the output of JSON data easier to read 
+        
+        - Use the json.loads() function to convert a JSON‐encoded object or file into a Python dictionary
+            - see loads.py 
+
+    Iterating Throuhg JSON Data  (see JSONLoop.py)
+
+        - We can use a for loop to iterate through the contents of a JSON file
+    
+    Reading and Writing JSON Data (see pprint.py)
+
+        - use the pprint() function, which formats the data to make it easier to read
+            - pretty print 
+
+        - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
