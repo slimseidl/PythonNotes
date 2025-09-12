@@ -1,0 +1,24 @@
+SQL Alchemy
+
+    - SQLAlchemy is a Python library providing a high-level object-relational mapping (ORM) database framework
+    - allows developers to work with databases using Python objects and methods rather than writing SQL queries directly
+    - supports many database engines, including MySQL, PostgreSQL, SQLite, and Oracle
+    - Key Features 
+
+        - Object Relational Mapping 
+
+            - allows developers to create Python classes that map to database tables, providing seamless integration between the database and the application.
+        
+        - Transaction Management 
+
+            - provides a transactional API that allows developers to manage database transactions easily and efficiently.
+
+        - Database Abstraction 
+
+            - provides a database abstraction layer that allows developers to write database-independent code, making switching between different database engines easy.
+
+        - Query Generation 
+
+            - provides a SQL Expression Language that allows developers to generate complex SQL queries using Python syntax.
+
+    
