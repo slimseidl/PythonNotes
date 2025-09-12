@@ -1,2 +1,56 @@
 Cleaning Data 
 
+    Dirty Data 
+
+        - missing, outlier, and duplicate data
+        - Missing data is an unknown or inapplicable value
+            - NULL  - databases 
+            - NAN  - python
+            - NAT - Not a Time 
+            -    NONE - unspecified
+        - Outlier data is a numeric value that is much larger or smaller than other values
+            - Two - Three standard devs from the feature mean 
+        - Duplicate data are two or more identical instances in a dataset
+
+
+    Discarding Data 
+
+        - Dirty data may be removed from a dataset by discarding
+        -  Dirty instances are usually discarded when:
+            - dirty instances comprise a small percentage of the dataset.
+            - dirty instances are random
+            - Instances are duplicates.
+        - Discarding features removes dirty features that contain a high percentage of missing values, such as 60% or more
+        - Pairwise discarding retains dirty instances for some analyses and discards dirty instances for others
+        - Instances are discarded only when an analysis uses a dirty feature
+
+    Imputing Data 
+
+        - replaces missing and outlier data with new values to retain all features 
+        - Hot-deck and cold-deck imputation replace missing and outlier data with a value from a randomly selected instance
+        - Mean imputation replaces missing and outlier data with the mean value of the feature
+            -  Missing and outlier data are excluded from the computation of the mean
+        - Regression imputation replaces missing and outlier data with a value computed from a regression model
+            - EX for miles per gallon: mpg = 40 - 2 * Cylinders - Liters.
+
+    Python Cleaning 
+
+        - df.drop()
+            - removes rows or colums (axis=0 for rows, 1 for cols)
+            df.labels specifies what to drop 
+        - df.drop_duplicates()
+            - df.drop_duplicates(inplace=True)
+            - lifestyleClean = lifestyle.drop_duplicates(subset=['annual_hours_worked'])
+        - df.dropna()
+        - df.duplicated()
+            - Returns a Boolean series that identifies duplicate rows in df. true indicates a duplicate row
+        - df.fillna()
+            - replaces NA / NAN with a value 
+            - df.fillna(value=20, inplace=True)
+        - df.isnull()
+            - 
+        - df.mean()
+            - returns the mean of rows or columns 
+            - skipna=True skips the na's 
+        - df.replace()
+
