@@ -1,0 +1,37 @@
+Manipulating data
+
+    - The first step of the data wrangling process is data discovery, or exploring patterns and trends within a dataset
+    - Data manipulation is the process of organizing or subsetting a dataset to explore a research problem
+    - used to split datasets into multiple groups based on a categorical feature
+
+Grouping 
+
+    - used to separate a dataframe into subsets based on levels of a categorical feature
+    - A frequency table is a table containing group sizes for a categorical feature
+
+Pivot Tables 
+
+    - calculates and displays descriptive statistics after grouping based on values of two categorical features
+    - One categorical feature is assigned to the pivot table's rows, and another categorical feature is assigned to the columns
+    - A contingency table is a special case of a pivot table in which the descriptive statistic is the number of instances in each combination of categorical features
+
+Data manipulation in Python
+
+    -  pandas package contains two methods for data manipulation
+    - df.groupby() splits a dataframe df into subsets
+    - df.pivot_table() creates pivot tables based on two categorical features
+
+    - df.groupby() sets the grouping feature using the "by" parameter
+        - Missing values for the grouping feature can be removed by setting dropna=True or grouped into a separate category by setting dropna=False
+        - cars.groupby(by=["Drive"]).median()
+    - df.pivot_table() takes several parameters
+        - "value" specifies the values in the pivot table's elements
+        - "index" specifies the row features 
+        - "columns" specifies the column groupings 
+        - "aggfunc" specifies the aggregate type for the values 
+        - cars.pivot_table(values="MPG",index="Drive",columns="EngineType",aggfunc=np.median)
+
+
+
+
+

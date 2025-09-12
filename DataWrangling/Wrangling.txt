@@ -1,0 +1,42 @@
+Data wrangling
+
+    - the process of preparing source data for efficient and accurate analysis
+    - include removing missing values, formatting features uniformly, and appending related data from external sources
+    - sometimes called data munging or data preparation
+
+Six Steps of Data Wrangling 
+
+    1. Discovering
+        -  data exploration
+        - Familiarizes the data scientist with source data
+
+    2. Structuing Data 
+        - transforms features to uniform formats, units, and scales
+
+    3. Cleaning 
+        -  removes or replaces missing and outlier data
+    
+    4. Enriching 
+        - derives new features from existing features and appends new data from external sources
+    
+    5. Validating 
+        - verifies that the dataset is internally consistent and accurate
+    
+    6. Publishing Data 
+        - makes the dataset available to other data scientists by storing data in a database, uploading data to the cloud, or distributing data files
+
+ETL - Extract, Transform, Load 
+
+    - A process that extracts data from transactional databases, transforms the data, and loads the data into an analytic database
+    - transforms data in a staging area, such as a temporary database, prior to loading data to the analytic database
+    - Extract, Load, Transform (ELT) is a variant of ETL that loads raw data directly to the analytic database and transforms the data in place
+    - Similar to wrangling
+    - Wrangling is more informal than ETL, executed manually 
+    - ETL is a more automated process that uses pipelines to modify data 
+    - ETL tools are also known as data integration tools 
+        - extract and merge data from many different database systems
+
+Wrangling in Python 
+
+    - pandas supports wranglign and is super powerful
+    - 
