@@ -1,0 +1,52 @@
+Debugging 
+
+    -  problem's cause is called a bug, and troubleshooting is called debugging.
+    - A basic debugging process is visual inspection
+    - a wise programmer only writes a few statements at a time, and then runs those statements to ensure the statements work correctly
+
+    - Inserting debug output statements
+
+        - output helps determine whether the preceding statement has the bug
+        - Ex: Put "\nDEBUG: tempValue is: " to output
+        - Put "\nDEBUG: fahrenheitValue is: " to output
+
+    - Hierarchical debugging
+
+        - A programmer may divide the statements into regions, and insert one debug output statement after each region
+        - f a region's output is bad (doesn't match expected output), the programmer can then create sub-hypotheses for the statements
+
+
+Example debug statements
+
+                        float a
+                        float b
+                        float c
+                        float aSquared
+                        float bSquared
+                        float cSquared
+
+                        a = Get next input
+                        b = Get next input
+                        Put "DEBUG: a is " to output
+                        Put a to output
+                        Put " and b is " to output
+                        Put b to output
+
+                        aSquared = a * 2
+                        bSquared = b * 2
+                        Put "\nDEBUG: aSquared is " to output
+                        Put aSquared to output
+                        Put " and bSquared is " to output
+                        Put bSquared to output
+
+                        cSquared = aSquared + bSquared
+                        Put "\nDEBUG: cSquared is " to output
+                        Put cSquared to output
+
+                        c = SquareRoot(cSquared)
+                        Put "\nc is: " to output
+
+Pseudocode 
+
+    - text that resembles a program in a real programming language but is simplified to aid human understanding
+    - 
