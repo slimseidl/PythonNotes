@@ -1,0 +1,135 @@
+Object-relational Mapper
+
+    - An object-relational mapper (ORM) is a software tool that connects object-oriented programming languages with relational databases
+    - acts as a bridge, converting and mapping data between the two models
+    - developers can work with database records as objects in their code, eliminating the need to write complex SQL queries or manage low-level database operations directly
+    -  automatically handles the translation of objects to database tables and manages the mapping between object attributes and database columns
+
+
+Using an ORM with Python 
+
+    - Choose ORM library 
+
+        - such as SQLAlchemy, Django ORM, and Peewee
+
+    - Install ORM 
+
+        - "pip install sqlalchemy"
+
+    - Configure Connection to databse 
+
+        - configure the ORM library to establish a connection with your database
+        - database type, host, port, username, and password
+
+    - Define database models 
+
+        - define your database models as Python classes
+        - Each class represents a table in the database, and its attributes correspond to the table columns
+        - Use the ORM library's syntax or decorators to specify relationships between tables, primary keys, and other
+
+    - Create Tables 
+
+        - use the ORM's migration or schema generation functionality to create the corresponding database tables
+
+    - Interact with database 
+
+        - perform database operations using object-oriented approaches
+        - Use the ORM's query language or methods to retrieve, create, update, or delete records
+
+SQL 
+
+    - SQLAlchemy is a widely-adopted object-relational mapping (ORM) library for Python
+    - offers both an object-relational API, which focuses on object-oriented interactions with the database
+    - a Core API, which provides a more direct and expressive interface for executing SQL queries
+    - Multiple DB types like MySQL, PostgreSQL, SQLite, and Oracle
+
+SQL Alchemy Functions 
+
+    - ORM 
+        - allows developers to map Python objects to database tables
+    - Database abstraction
+        - write database-agnostic code
+        - seamless switching 
+    - Querying 
+        - create complex database queries using Python code.
+        - rich set of query APIs and tools for building dynamic and efficient queries
+    - Relationship Management
+    - Transaction management
+        - includes connection pooling capabilities, which optimize database connection
+        - improve performance by reusing existing connections instead of establishing new ones for each database operation
+    - Schema Management 
+        -  tools for defining and managing database schemas, including creating tables, modifying columns, and handling database migrations
+
+Querying with SQLAlchemy
+
+    - Import 
+
+        - pip install mysql-connector-python
+        - import mysql.connector
+        - import sqlalchemy
+        - from SQLAlchemy.engine import create_engine
+        - from SQLAlchemy.orm import Session 
+        - engine = create_engine() 
+
+    - Establish db connection 
+
+        - create_engine 
+            - creates a database object 
+        - The engine object represents the interface to the database and contains the necessary connection details, such as the database URL, user, passwrod 
+
+        connection = mysql.connector.connect(
+
+                        host="your_host",
+
+                        user="your_username",
+
+                        password="your_password",
+
+                        database="your_database"
+
+    - Create a cursor
+
+        - create a cursor object that allows you to execute SQL
+        - cursor = connection.cursor() - mysql
+        - conn = engine.connect() - sqlalchemy
+
+    - Define Model 
+
+        - Define the database models using Python classes
+        - Each class is a table 
+
+    - Create a session 
+
+        - Create a session object from the Session class
+
+    - Execute queries
+
+        - Use the session object to execute queries
+        - query = "SELECT * FROM your_table"
+        - cursor.execute(query)
+
+    - Retrieve Results 
+
+        - Use the query API to retrieve the results of your query
+        - SQLAlchemy provides methods like first(), all(), filter(), and group_by() to facilitate result retrieval
+        - Fetch all rows at once
+            - rows = cursor.fetchall()
+        - Iterate 
+            - for row in cursor:
+                print(row)
+
+    - Process Results 
+
+        -  SQLAlchemy returns query results as objects or tuples, depending on your query and how you construct it
+
+    - Close Session 
+
+        - SessionObject.close() 
+        - cursor.close()
+        - cnx.close()
+
+    
+
+
+
+

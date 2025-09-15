@@ -22,3 +22,9 @@ SQL Alchemy
             - provides a SQL Expression Language that allows developers to generate complex SQL queries using Python syntax.
 
     
+        - use create_engine() to establish a database connection 
+        - Define database models that inherit from declarative_base()
+            - Define table structures and relationships using classes / attributes 
+        - Use "session" object to perform database operations like adding, querying, updating, and deleting records
+        - Leverage SQLAlchemy's query API, including methods like filter, all, first, etc., to construct complex queries
+        - 

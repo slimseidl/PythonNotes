@@ -22,4 +22,8 @@ Unit test Module
 
             - can be run automatically, making it easy to catch regressions in the application as changes are made.
 
-    
+    - create test cases, test suites, and assertions
+    - Use setUp and tearDown methods to set up and clean up test fixtures
+    - Write individual test methods for each test case, focusing on the specific functionality or behavior of the tested code
+    - assertEqual, assertTrue, assertRaises, etc., to verify expected results and ensure the code behaves as intended
+    - Use coverage testing tools like coverage.py to measure the extent of code coverage during testing, ensuring that all relevant code paths are exercised.
