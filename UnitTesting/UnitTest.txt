@@ -1,0 +1,25 @@
+Unit test Module 
+
+    - a software testing technique that involves testing a software application's units or components
+    - the built-in unit test module provides a framework for writing and executing unit tests
+    - typically written as functions that test a specific piece of functionality in the application
+
+    - Benefits 
+
+        - Early Bug Detection 
+
+            -  helps identify bugs and issues early in the development process,
+        
+        - Code Refactoring 
+
+            - allows developers to refactor code with confidence, knowing that they can quickly test the impact of their changes.
+
+        - Documentation 
+
+            - serve as documentation for the application, providing a clear and concise description of each unit or component.
+
+        - Regression Testing 
+
+            - can be run automatically, making it easy to catch regressions in the application as changes are made.
+
+    
