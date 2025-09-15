@@ -1,0 +1,10 @@
+PyTest > Unit Test 
+
+    - Run standalone tests as their own case 
+    - Easy to Read 
+    - Standard assert method rather than 10 with unittest 
+    - CLI 
+    - Automate setup, teradown, and common test scenarios 
+    - Not in standard library > pip install pytest 
+    
+    - See 
