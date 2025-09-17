@@ -132,6 +132,7 @@ Class Customization
     - implements instance methods with special method names
         - def __str__(self):
                 can return an output statement 
+        - Basically allows for printing of the method in a readable format 
 
 Example : 
 
