@@ -1,23 +1,79 @@
 import json 
 import requests 
+from datetime import datetime
 
-
-class Roster():
-    def __init__(self, team=None):
-        self.team = team 
+class NFLRoster():
+    def __init__(self, team='Chiefs'):
+        self.team = team
 
 
     def get_team_info(self):
-        
+        # team = input("Enter the name of a team you'd like to get player information on:\n")
+        url = f'https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t={self.team}'
+        response = requests.get(url)
+        data = response.json()
+
+        teamID = None
+        for info in data["teams"]:
+            if info["strLeague"] == "NFL":
+                teamID = info["idTeam"]
+                break
+        return teamID
+
+        # print(f'Team Name: {teamName} Team ID: {teamID}\n')
+
+    def get_team_name(self):
+        # team = input("Enter the name of a team you'd like to get player information on:\n")
+        url = f'https://www.thesportsdb.com/api/v1/json/123/searchteams.php?t={self.team}'
+        response = requests.get(url)
+        data = response.json()
+
+        teamName = None
+        for info in data["teams"]:
+            if info["strLeague"] == "NFL":
+                teamName = info["strTeam"]
+                break
+        return teamName
         
 
     def get_roster(self):
-        pass 
+        id = self.get_team_info()
+
+        roster = requests.get(f'https://www.thesportsdb.com/api/v1/json/123/lookup_all_players.php?id={id}')
+        team_data = roster.json()
+        # print(json.dumps(team_data,indent=2))
+
+        player_dict = {}
+
+        for players in team_data["player"]:
+            # if players["strPosition"] in ("Quarterback", "Wide Receiver", "Running Back"): - if premium version of API was used
+            name = players["strPlayer"]
+            val = players["idPlayer"]
+            player_dict[name] = val
+            # else:
+              #  continue
+
+        return player_dict
 
     def get_player_ID(self):
-        pass 
+        players = []
 
-    def get_player_info(self):
+        roster = self.get_roster()
+
+        for name in roster:
+            players.append(roster[name]) # appending player id's from roster file to players list
+        return players
+
+        # print(players)
+
+    def print_info(self):
+        
+        players = self.get_player_ID()
+        TeamNames = self.get_team_name()
+
+        print(f'Roster Information for the {TeamNames}\n')
+
+
         for player_id in players:
             url = f'https://www.thesportsdb.com/api/v1/json/123/lookupplayer.php?id={player_id}'
             response = requests.get(url)
@@ -29,15 +85,20 @@ class Roster():
                 name = player["strPlayer"]
                 team = player["strTeam"]
                 birth = player["dateBorn"]
-                birthplace = player["strBirthLocation"]
+                birthplace = player["strBirthLocation"].replace("\n", "").replace("\t", "").strip()
                 height = player["strHeight"]
                 weight = player["strWeight"]
+                position = player["strPosition"]
+                id = player["idPlayer"]
+                if birth:
+                    age = datetime.today().year - int(birth[:4])
+                else:
+                    age = None
+                # age = datetime.today().year - int(player["dateBorn"[:4]])
 
-                print(f'{name} is a football player for the {team} of the National Football League.' 
-                    f' He is {height} tall and weighs {weight}.'
-                    f' He was born on {birth} in {birthplace}.')
+                print(f'Player Information: {id}\n'
+                    f'Name: {name} | Age: {age} | Team: {team} | Position: {position}\n'
+                    f'Height: {height[0:10]} | Weight: {weight[0:6]}\n'
+                    f'Birth Date: {birth}\nBirth Place: {birthplace}\n')
             else:
                 print(f'No data for {player_id}')
-
-
-
